@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalhalab <aalhalab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 12:25:07 by aalhalab          #+#    #+#             */
-/*   Updated: 2024/10/31 12:32:11 by aalhalab         ###   ########.fr       */
+/*   Created: 2024/10/31 15:52:49 by aalhalab          #+#    #+#             */
+/*   Updated: 2024/10/31 16:28:53 by aalhalab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// main.cpp
+#include "Dog.hpp"
 #include "Cat.hpp"
 
-Cat::Cat()
-{
-    type = "Cat";
-    std::cout << "[Cat] A cat has appeared." << std::endl;
-}
+int main() {
+    Dog dog1;
+    dog1.makeSound();
 
-Cat::~Cat() 
-{
-    std::cout << "[Cat] The cat has gone." << std::endl;
-}
+    Cat cat1;
+    cat1.makeSound();
 
-void Cat::makeSound() const 
-{
-    std::cout << "[Cat Sound] Meow! Purr..." << std::endl;
+    Dog dog2 = dog1;   
+    dog2.makeSound();
+
+    Cat cat2;
+    cat2 = cat1;       
+    cat2.makeSound();
+
+    return 0;
 }
